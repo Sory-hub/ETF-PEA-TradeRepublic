@@ -1,141 +1,137 @@
-# 📊 Projet MEAFGP — Gestion de Portefeuille Financier
+# 📈 Analyse ETFs PEA — Trade Republic
 
-**Université Sorbonne Paris Nord — Master 1 MBFA**
-**Module : Méthodes et Applications en Finance et Gestion de Portefeuille**
-**Année académique : 2025–2026 | Auteur : TRAORE**
+**Projet VBA Excel | Analyse de 22 ETFs éligibles au PEA**
+**Plateforme : Trade Republic | Généré le 11/03/2026 | Auteur : TRAORE**
 
 ---
 
 ## 🎯 Objectif du projet
 
-Construction et analyse d'un **portefeuille optimisé** composé de **10 actions britanniques du FTSE 100**, sur la période **2013–2022**, en appliquant les modèles classiques de la théorie moderne du portefeuille (Markowitz, Sharpe, Elton-Gruber). Un suivi de performance sur **mars 2026** complète l'analyse.
+Ce projet VBA analyse **22 ETFs éligibles au PEA** disponibles sur **Trade Republic**, répartis entre 9 émetteurs majeurs. Il fournit :
+
+- Un **récapitulatif consolidé** de tous les ETFs (ISIN, prix, encours)
+- Un **historique de prix sur 3 ans** (mars 2023 – mars 2026) par émetteur
+- Une **allocation de portefeuille recommandée** sur 5 ETFs clés
+- Des **graphiques automatiques** générés par macro VBA
 
 ---
 
-## 📁 Fichiers du dépôt
+## 📁 Contenu du fichier
 
-| Fichier | Description |
+| Feuille | Description |
 |---|---|
-| `Projet_MEAFGP.xlsx` | Données, statistiques, Markowitz, Sharpe, performances |
-| `Rapport_MEAFGP_V2_FINAL.pdf` | Rapport académique complet (16 pages) |
-| `Presentation_MEAFGP_2026.pptx` | Présentation PowerPoint (13 diapositives) |
-| `Descriptif_Projet_MEAFGP.docx` | Descriptif du projet |
+| `📊 Récapitulatif` | Liste consolidée des 22 ETFs avec prix et encours |
+| `Amundi` | Historique 3 ans — 10 ETFs Amundi |
+| `BNP Paribas` | Historique 3 ans — 3 ETFs BNP Paribas |
+| `Xtrackers` | Historique 3 ans — 2 ETFs DWS/Xtrackers |
+| `UBS` | Historique 3 ans — 1 ETF UBS |
+| `SPDR` | Historique 3 ans — 1 ETF State Street SPDR |
+| `Vanguard` | Historique 3 ans — 2 ETFs Vanguard |
+| `HSBC` | Historique 3 ans — 1 ETF HSBC |
+| `Invesco` | Historique 3 ans — 1 ETF Invesco |
+| `Global X` | Historique 3 ans — 1 ETF Global X |
 
 ---
 
-## 📈 Les 10 actions étudiées (FTSE 100)
+## 🏦 Les 22 ETFs analysés
 
-| Ticker | Entreprise | Secteur |
-|---|---|---|
-| NWG | NatWest Group | Banque & Finance |
-| PHNX | Phoenix Group | Assurance |
-| DGE | Diageo | Boissons & Alcools |
-| ABF | Associated British Foods | Agroalimentaire |
-| IMB | Imperial Brands | Tabac |
-| RR | Rolls-Royce Holdings | Aérospatiale |
-| RTO | Rentokil Initial | Services aux entreprises |
-| GLEN | Glencore | Matières premières |
-| BDEV | Barratt Developments | Immobilier |
-| KGF | Kingfisher | Distribution |
+| ETF | Émetteur | ISIN | AUM |
+|---|---|---|---|
+| PEA S&P 500 EUR Hedged (Acc) | Amundi | LU1650491282 | 1,2 Md€ |
+| MSCI World EUR (Acc) | Amundi | FR0013412285 | 1,1 Md€ |
+| CAC 40 EUR (Acc) | Amundi | FR0013380607 | 4,4 Md€ |
+| Core CAC 40 EUR (Dist) | Amundi | FR0010468983 | 208 M€ |
+| MSCI EMU SRI PAB EUR (Acc) | Amundi | FR0013412020 | 637 M€ |
+| MDAX ESG EUR (Dist) | Amundi | FR0011440478 | 53 M€ |
+| FTSE MIB EUR (Dist) | Amundi | FR0010010827 | 688 M€ |
+| IBEX 35 EUR (Acc) | Amundi | FR0010251744 | 944 M€ |
+| MSCI Greece EUR (Dist) | Amundi | FR0010405431 | 432 M€ |
+| PEA Obligations d'État Euro (Acc) | Amundi | FR0013346681 | 183 M€ |
+| EURO STOXX 50 EUR (Dist) | BNP Paribas | FR0012739431 | 1,7 Md€ |
+| EURO STOXX 50 ESG EUR (Dist) | BNP Paribas | FR0013411980 | 153 M€ |
+| ESG Growth Europe EUR (Acc) | BNP Paribas | FR0013412038 | 275 M€ |
+| DAX EUR (Dist) | Xtrackers | LU0274211480 | 7,2 Md€ |
+| EURO STOXX Quality Dividend (Dist) | Xtrackers | LU0292096186 | 845 M€ |
+| Euro Stoxx 50 (Dist) | UBS | LU0136234068 | 726 M€ |
+| MSCI EMU (Acc) | SPDR | IE00B910VR50 | 341 M€ |
+| FTSE Dev. Europe Ex UK (Acc) | Vanguard | IE00BKX55T58 | 10,2 Md€ |
+| FTSE Dev. Europe Ex UK (Dist) | Vanguard | IE00B945VV12 | 7,0 Md€ |
+| Euro Stoxx 50 EUR (Dist) | HSBC | FR0010790980 | 531 M€ |
+| FTSE RAFI Europe EUR (Dist) | Invesco | IE00B23D8S39 | 732 M€ |
+| Euro STOXX 50 CHF Hedged (Acc) | Global X | IE00B6R52143 | 398 M€ |
 
 ---
 
-## 🔬 Méthodologie
+## 💼 Portefeuille PEA recommandé
 
-Le projet repose sur quatre étapes :
-
-1. **Statistiques descriptives** — rendements, volatilité, corrélations
-2. **Modèle de Markowitz** — frontière efficiente, portefeuille à variance minimale (PMin)
-3. **Modèle de Sharpe** — régression sur FTSE 100, bêtas et alphas
-4. **Méthode Elton-Gruber (C\*)** — sélection optimale par ratio de Treynor
+| ETF | Allocation |
+|---|---|
+| Amundi MSCI World EUR (Acc) | **35%** |
+| Amundi CAC 40 EUR (Acc) | **20%** |
+| BNP EURO STOXX 50 EUR (Dist) | **20%** |
+| Amundi PEA Obligations d'État Euro (Acc) | **15%** |
+| BNP ESG Growth Europe EUR (Acc) | **10%** |
 
 ---
 
 ## 📊 Graphiques
 
-### 1. Taux sans risque — UK Gilt 10 ans
-![Taux sans risque](fig1_rf.png)
+### 1. Répartition des ETFs par émetteur
+![Émetteurs](fig1_emetteurs_nb.png)
 
 ---
 
-### 2. Évolution des cours (base 100 — 2013–2022)
-![Évolution des cours](fig2_cours.png)
+### 2. Encours (AUM) par émetteur
+![AUM par émetteur](fig2_aum_emetteur.png)
 
 ---
 
-### 3. Profil Rendement / Risque
-![Profil Rendement Risque](fig3_profil.png)
+### 3. Top 10 ETFs par encours
+![Top 10 AUM](fig3_top10_aum.png)
 
 ---
 
-### 4. Matrice de corrélation
-![Matrice de corrélation](fig4_corr.png)
+### 4. Répartition par devise de cotation
+![Devises](fig4_devises.png)
 
 ---
 
-### 5. Frontière efficiente de Markowitz
-![Frontière efficiente](fig5_frontiere.png)
-
-> ⭐ Le point rouge indique le **Portefeuille à Variance Minimale (PMin)** — portefeuille retenu.
+### 5. Composition du portefeuille recommandé
+![Portefeuille](fig5_portefeuille.png)
 
 ---
 
-### 6. Bêtas et R² — Modèle de Sharpe
-![Bêtas et R2](fig6_beta_r2.png)
+### 6. Performance des ETFs Amundi (base 100)
+![Performance Amundi](fig6_perf_amundi.png)
 
 ---
 
-### 7. Régression Diageo (DGE) sur FTSE 100
-![Régression Diageo](fig7_reg_diageo.png)
+### 7. Performance comparative par émetteur
+![Performance comparative](fig7_perf_comparative.png)
 
 ---
 
-### 8. Régression Rentokil (RTO) sur FTSE 100
-![Régression Rentokil](fig8_reg_rentokil.png)
+### 8. Performance du portefeuille PEA recommandé
+![Performance portefeuille](fig8_perf_portefeuille.png)
 
 ---
 
-### 9. Composition du portefeuille optimal (Elton-Gruber)
-![Composition portefeuille](fig9_pie.png)
-
-> Seuil optimal **C\* = 0,054** — Poids positifs uniquement affichés
+### 9. Volatilité annualisée des composantes
+![Volatilité](fig9_volatilite.png)
 
 ---
 
-### 10. NAV — Valeur liquidative historique (2013–2022)
-![NAV Performance](fig10_nav.png)
+### 10. Profil Rendement / Risque
+![Rendement Risque](fig10_rendement_risque.png)
 
 ---
 
-### 11. Drawdown des portefeuilles
-![Drawdown](fig11_drawdown.png)
+## 🛠️ Technologies utilisées
+
+- **VBA Excel** — Macros pour la collecte de données et la génération de graphiques
+- **Python** — Visualisations avancées (pandas, matplotlib)
+- **Trade Republic** — Source des données de prix
 
 ---
 
-### 12. Suivi de performance — Mars 2026
-![Mars 2026](fig12_mars2026.png)
-
----
-
-## 🏆 Résultats clés
-
-| Portefeuille | Rendement annualisé | Volatilité | Performance mars 2026 |
-|---|---|---|---|
-| FTSE 100 (benchmark) | +2,10% | 15,96% | **−5,95%** |
-| PMin Markowitz | +5,27% | 15,54% | **−2,87%** |
-| PMin Sharpe | +5,68% | 15,97% | **−3,40%** |
-
-> En mars 2026, le portefeuille PMin Markowitz a perdu **2 fois moins** que le marché, validant l'efficacité de l'optimisation de Markowitz en période de stress.
-
----
-
-## 🛠️ Outils utilisés
-
-- **Microsoft Excel** — Solver, Analyse ToolPak, régressions
-- **Python** — pandas, numpy, matplotlib
-- **LaTeX** — rédaction du rapport (pdflatex, 16 pages)
-- **PowerPoint** — présentation orale (13 diapositives)
-
----
-
-*Projet réalisé dans le cadre du cours de Gestion de Portefeuille — Master 1 MBFA — Université Sorbonne Paris Nord — 2025/2026*
+*Projet réalisé par TRAORE — tsory728@gmail.com — 2026*
